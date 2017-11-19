@@ -63,7 +63,7 @@ def get_html(url, count=1):
             proxy = get_proxy()
             if proxy:
                 logging.info('获取新代理成功：{}'.format(proxy))
-                return get_html(url)
+                return get_html(url, count)
             else:
                 logging.warning('获取新代理失败，当前地址：%s' % (url,))
                 return None
@@ -74,7 +74,7 @@ def get_html(url, count=1):
         proxy = get_proxy()
         if proxy:
             logging.info('获取新代理成功：{}'.format(proxy))
-            return get_html(url, 1)
+            return get_html(url, count)
         else:
             logging.warning('获取新代理失败，当前地址：%s' % (url,))
             return None
@@ -95,7 +95,7 @@ def get_index(keyword, page):
     # 将请求参数urlencode
     data = urlencode(raw_data)
     url = base_url + data
-    html = get_html(url)
+    html = get_html(url, 1)
     return html
 
 

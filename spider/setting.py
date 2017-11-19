@@ -16,7 +16,7 @@ headers = {
 proxy_pool_url = 'http://127.0.0.1:5000/getProxy'
 
 # 最大重复请求次数
-max_count = 5
+max_count = 3
 
 # mongo配置
 mongo_url = 'localhost'
